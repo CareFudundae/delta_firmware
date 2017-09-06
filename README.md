@@ -1,4 +1,4 @@
 # delta_firmware
 levisonofed
 
-This repo contains the most recent working firmware for my FolgerTech 2020 Kossel 3d printer.
+This branch contains the original firmware for my FolgerTech 2020 Kossel 3d printer, as provided by FolgerTech.
