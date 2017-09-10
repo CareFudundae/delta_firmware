@@ -513,7 +513,7 @@
   #define DELTA_DIAGONAL_ROD 269.75//266.94//266.74//269.51 // mm
 
   // height from z=0 to home position
-  #define DELTA_HEIGHT 257.81//257.59//257.56//257.825 // get this value from auto calibrate
+  #define DELTA_HEIGHT 257.78//257.81//257.59//257.56//257.825 // get this value from auto calibrate
 
   #define DELTA_ENDSTOP_ADJ { 0.0, 0.0, 0.0 } // get these from auto calibrate
 
@@ -1128,7 +1128,7 @@
 #endif
 
 // Delta only homes to Z
-#define HOMING_FEEDRATE_Z  (200*60) //(80*60) is what FT firmware had
+#define HOMING_FEEDRATE_Z  (100*60) //(80*60) is what FT firmware had
 
 //=============================================================================
 //============================= Additional Features ===========================
