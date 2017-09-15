@@ -764,10 +764,10 @@
 #define XY_PROBE_SPEED 4000
 
 // Speed for the first approach when double-probing (with PROBE_DOUBLE_TOUCH)
-#define Z_PROBE_SPEED_FAST HOMING_FEEDRATE_Z
+#define Z_PROBE_SPEED_FAST HOMING_FEEDRATE_Z/20
 
 // Speed for the "accurate" probe of each point
-#define Z_PROBE_SPEED_SLOW (Z_PROBE_SPEED_FAST / 5)
+#define Z_PROBE_SPEED_SLOW (Z_PROBE_SPEED_FAST / 50)
 
 // Use double touch for probing
 #define PROBE_DOUBLE_TOUCH
@@ -974,8 +974,8 @@
  *   leveling in steps so you can manually adjust the Z height at each grid-point.
  *   With an LCD controller the process is guided step-by-step.
  */
-#define AUTO_BED_LEVELING_3POINT
-//#define AUTO_BED_LEVELING_LINEAR
+//#define AUTO_BED_LEVELING_3POINT
+#define AUTO_BED_LEVELING_LINEAR
 //#define AUTO_BED_LEVELING_BILINEAR
 //#define AUTO_BED_LEVELING_UBL
 //#define MESH_BED_LEVELING
@@ -1002,7 +1002,7 @@
 
   // Set the number of grid points per dimension.
   // Works best with 5 or more points in each dimension.
-  #define GRID_MAX_POINTS_X 9
+  #define GRID_MAX_POINTS_X 5//9
   #define GRID_MAX_POINTS_Y GRID_MAX_POINTS_X
 
   #define LEFT_PROBE_BED_POSITION -(DELTA_PROBEABLE_RADIUS)
