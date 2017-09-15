@@ -1128,7 +1128,7 @@
 #endif
 
 // Delta only homes to Z
-#define HOMING_FEEDRATE_Z  (200*60) //(80*60) is what FT firmware had
+#define HOMING_FEEDRATE_Z  (100*60) //(80*60) is what FT firmware had
 
 //=============================================================================
 //============================= Additional Features ===========================
