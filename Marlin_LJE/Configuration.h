@@ -513,7 +513,7 @@
   #define DELTA_DIAGONAL_ROD 269.75//266.94//266.74//269.51 // mm
 
   // height from z=0 to home position
-  #define DELTA_HEIGHT 258.02//257.81//257.59//257.56//257.825 // get this value from auto calibrate
+  #define DELTA_HEIGHT 257.6//258.02//257.81//257.59//257.56//257.825 // get this value from auto calibrate
 
   #define DELTA_ENDSTOP_ADJ { -0.64, 0.0, -0.79 } // get these from auto calibrate
 
@@ -758,7 +758,7 @@
  */
 #define X_PROBE_OFFSET_FROM_EXTRUDER 0//-26//0     // X offset: -left  +right  [of the nozzle]
 #define Y_PROBE_OFFSET_FROM_EXTRUDER 0//-16//-10   // Y offset: -front +behind [the nozzle]
-#define Z_PROBE_OFFSET_FROM_EXTRUDER -28.55//-30//-0.3//-3.5  // Z offset: -below +above  [the nozzle]
+#define Z_PROBE_OFFSET_FROM_EXTRUDER -28.05//-30//-0.3//-3.5  // Z offset: -below +above  [the nozzle]
 
 // X and Y axis travel speed (mm/s) between probes
 #define XY_PROBE_SPEED 4000
