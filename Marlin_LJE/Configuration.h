@@ -507,15 +507,15 @@
   #endif
 
   // Print surface diameter/2 minus unreachable space (avoid collisions with vertical towers).
-  #define DELTA_PRINTABLE_RADIUS 90.0 // mm
+  #define DELTA_PRINTABLE_RADIUS 85.0 // mm
 
   // Center-to-center distance of the holes in the diagonal push rods.
   #define DELTA_DIAGONAL_ROD 269.75//266.94//266.74//269.51 // mm
 
   // height from z=0 to home position
-  #define DELTA_HEIGHT 257.47//257.81//257.59//257.56//257.825 // get this value from auto calibrate
+  #define DELTA_HEIGHT 257.95//257.81//257.59//257.56//257.825 // get this value from auto calibrate
 
-  #define DELTA_ENDSTOP_ADJ { -0.78, 0.0, -0.81 } // get these from auto calibrate
+  #define DELTA_ENDSTOP_ADJ { -0.74, 0.0, -0.78 } // get these from auto calibrate
 
   // Horizontal distance bridged by diagonal push rods when effector is centered.
   // if domed, increase value
@@ -525,7 +525,7 @@
   // Trim adjustments for individual towers
   // tower angle corrections for X and Y tower / rotate XYZ so Z tower angle = 0
   // measured in degrees anticlockwise looking from above the printer
-  #define DELTA_TOWER_ANGLE_TRIM { 0.17, 0.01, 0.0 } // get these values from auto calibrate
+  #define DELTA_TOWER_ANGLE_TRIM { 0.16, -0.01, 0.0 } // get these values from auto calibrate
 
   // delta radius and diaginal rod adjustments measured in mm
   //#define DELTA_RADIUS_TRIM_TOWER { 0.0, 0.0, 0.0 }
@@ -764,7 +764,7 @@
 #define XY_PROBE_SPEED 4000
 
 // Speed for the first approach when double-probing (with PROBE_DOUBLE_TOUCH)
-#define Z_PROBE_SPEED_FAST HOMING_FEEDRATE_Z/2
+#define Z_PROBE_SPEED_FAST HOMING_FEEDRATE_Z
 
 // Speed for the "accurate" probe of each point
 #define Z_PROBE_SPEED_SLOW (Z_PROBE_SPEED_FAST / 10)
@@ -1144,7 +1144,7 @@
 // M501 - reads parameters from EEPROM (if you need reset them after you changed them temporarily).
 // M502 - reverts to the default "factory settings".  You still need to store them in EEPROM afterwards if you want to.
 //
-//#define EEPROM_SETTINGS // Enable for M500 and M501 commands
+#define EEPROM_SETTINGS // Enable for M500 and M501 commands
 //#define DISABLE_M503    // Saves ~2700 bytes of PROGMEM. Disable for release!
 #define EEPROM_CHITCHAT   // Give feedback on EEPROM commands. Disable to save PROGMEM.
 
