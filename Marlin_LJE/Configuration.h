@@ -501,7 +501,7 @@
 
   #if ENABLED(DELTA_AUTO_CALIBRATION) || ENABLED(DELTA_CALIBRATION_MENU)
     // Set the radius for the calibration probe points - max DELTA_PRINTABLE_RADIUS*0.869 for non-eccentric probes
-    #define DELTA_CALIBRATION_RADIUS 80.0 // mm
+    #define DELTA_CALIBRATION_RADIUS 70.0 // mm
     // Set the steprate for papertest probing
     #define PROBE_MANUALLY_STEP 0.025
   #endif
@@ -510,12 +510,12 @@
   #define DELTA_PRINTABLE_RADIUS 85.0 // mm
 
   // Center-to-center distance of the holes in the diagonal push rods.
-  #define DELTA_DIAGONAL_ROD 269.75//266.94//266.74//269.51 // mm
+  #define DELTA_DIAGONAL_ROD 266.94//266.74//269.51 // mm
 
   // height from z=0 to home position
-  #define DELTA_HEIGHT 257.55//258.02//257.81//257.59//257.56//257.825 // get this value from auto calibrate
+  #define DELTA_HEIGHT 257.75//257.75//258.02//257.81//257.59//257.56//257.825 // get this value from auto calibrate
 
-  #define DELTA_ENDSTOP_ADJ { -0.64, 0.0, -0.79 } // get these from auto calibrate
+  #define DELTA_ENDSTOP_ADJ {-0.84, 0.0, -0.89}//{ -0.64, 0.0, -0.79 } // get these from auto calibrate
 
   // Horizontal distance bridged by diagonal push rods when effector is centered.
   // if domed, increase value
@@ -758,7 +758,7 @@
  */
 #define X_PROBE_OFFSET_FROM_EXTRUDER 0//-26//0     // X offset: -left  +right  [of the nozzle]
 #define Y_PROBE_OFFSET_FROM_EXTRUDER 0//-16//-10   // Y offset: -front +behind [the nozzle]
-#define Z_PROBE_OFFSET_FROM_EXTRUDER -28.05//-30//-0.3//-3.5  // Z offset: -below +above  [the nozzle]
+#define Z_PROBE_OFFSET_FROM_EXTRUDER -28.19//-28.12//-30//-0.3//-3.5  // Z offset: -below +above  [the nozzle]
 
 // X and Y axis travel speed (mm/s) between probes
 #define XY_PROBE_SPEED 4000
@@ -924,7 +924,7 @@
  * For other boards you may need to define FIL_RUNOUT_PIN.
  * By default the firmware assumes HIGH = has filament, LOW = ran out
  */
-//#define FILAMENT_RUNOUT_SENSOR
+#define FILAMENT_RUNOUT_SENSOR
 #if ENABLED(FILAMENT_RUNOUT_SENSOR)
   #define FIL_RUNOUT_INVERTING false // set to true to invert the logic of the sensor.
   #define ENDSTOPPULLUP_FIL_RUNOUT // Uncomment to use internal pullup for filament runout pins if the sensor is defined.
