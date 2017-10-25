@@ -513,14 +513,14 @@
   #define DELTA_DIAGONAL_ROD 266.94//266.74//269.51 // mm
 
   // height from z=0 to home position
-  #define DELTA_HEIGHT 257.75//257.75//258.02//257.81//257.59//257.56//257.825 // get this value from auto calibrate
+  #define DELTA_HEIGHT 257.68//257.75//258.02//257.81//257.59//257.56//257.825 // get this value from auto calibrate
 
-  #define DELTA_ENDSTOP_ADJ {-0.84, 0.0, -0.89}//{ -0.64, 0.0, -0.79 } // get these from auto calibrate
+  #define DELTA_ENDSTOP_ADJ {-0.94, 0.0, -0.94}//{ -0.64, 0.0, -0.79 } // get these from auto calibrate
 
   // Horizontal distance bridged by diagonal push rods when effector is centered.
   // if domed, increase value
   // if bowled, decrease value
-  #define DELTA_RADIUS 147.63//147.73//147.81//147.01//147.45//147.18 //mm  Get this value from auto calibrate
+  #define DELTA_RADIUS 147.5//147.63//147.73//147.81//147.01//147.45//147.18 //mm  Get this value from auto calibrate
 
   // Trim adjustments for individual towers
   // tower angle corrections for X and Y tower / rotate XYZ so Z tower angle = 0
