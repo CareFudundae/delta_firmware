@@ -513,7 +513,7 @@
   #define DELTA_DIAGONAL_ROD 266.94//266.74//269.51 // mm
 
   // height from z=0 to home position
-  #define DELTA_HEIGHT 257.65//257.68//257.75//258.02//257.81//257.59//257.56//257.825 // get this value from auto calibrate
+  #define DELTA_HEIGHT 257.62//257.68//257.75//258.02//257.81//257.59//257.56//257.825 // get this value from auto calibrate
 
   #define DELTA_ENDSTOP_ADJ {-0.94, 0.0, -0.94}//{ -0.64, 0.0, -0.79 } // get these from auto calibrate
 
