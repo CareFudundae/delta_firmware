@@ -427,7 +427,7 @@
 // or to allow moving the extruder regardless of the hotend temperature.
 // *** IT IS HIGHLY RECOMMENDED TO LEAVE THIS OPTION ENABLED! ***
 #define PREVENT_COLD_EXTRUSION
-#define EXTRUDE_MINTEMP 170
+#define EXTRUDE_MINTEMP 200
 
 // This option prevents a single extrusion longer than EXTRUDE_MAXLENGTH.
 // Note that for Bowden Extruders a too-small value here may prevent loading.
@@ -513,19 +513,19 @@
   #define DELTA_DIAGONAL_ROD 266.94//266.74//269.51 // mm
 
   // height from z=0 to home position
-  #define DELTA_HEIGHT 257.62//257.68//257.75//258.02//257.81//257.59//257.56//257.825 // get this value from auto calibrate
+  #define DELTA_HEIGHT 260.00//257.26//257.46//257.55//257.62//257.68//257.75//258.02//257.81//257.59//257.56//257.825 // get this value from auto calibrate
 
-  #define DELTA_ENDSTOP_ADJ {-0.94, 0.0, -0.94}//{ -0.64, 0.0, -0.79 } // get these from auto calibrate
+  #define DELTA_ENDSTOP_ADJ {.07, 0.0, -1.18} //{-0.94, 0.0, -0.94}//{ -0.64, 0.0, -0.79 } // get these from auto calibrate
 
   // Horizontal distance bridged by diagonal push rods when effector is centered.
   // if domed, increase value
   // if bowled, decrease value
-  #define DELTA_RADIUS 147.5//147.63//147.73//147.81//147.01//147.45//147.18 //mm  Get this value from auto calibrate
+  #define DELTA_RADIUS 146.55//147.5//147.63//147.73//147.81//147.01//147.45//147.18 //mm  Get this value from auto calibrate
 
   // Trim adjustments for individual towers
   // tower angle corrections for X and Y tower / rotate XYZ so Z tower angle = 0
   // measured in degrees anticlockwise looking from above the printer
-  #define DELTA_TOWER_ANGLE_TRIM { 0.28, 0.09, 0.0 } // get these values from auto calibrate
+  #define DELTA_TOWER_ANGLE_TRIM {.07,-.01,0.0}//{ 0.28, 0.09, 0.0 } // get these values from auto calibrate
 
   // delta radius and diaginal rod adjustments measured in mm
   //#define DELTA_RADIUS_TRIM_TOWER { 0.0, 0.0, 0.0 }
@@ -758,19 +758,19 @@
  */
 #define X_PROBE_OFFSET_FROM_EXTRUDER 0//-26//0     // X offset: -left  +right  [of the nozzle]
 #define Y_PROBE_OFFSET_FROM_EXTRUDER 0//-16//-10   // Y offset: -front +behind [the nozzle]
-#define Z_PROBE_OFFSET_FROM_EXTRUDER -28.19//-28.12//-30//-0.3//-3.5  // Z offset: -below +above  [the nozzle]
+#define Z_PROBE_OFFSET_FROM_EXTRUDER -28.12//-28.32//-28.19//-28.12//-30//-0.3//-3.5  // Z offset: -below +above  [the nozzle]
 
 // X and Y axis travel speed (mm/s) between probes
-#define XY_PROBE_SPEED 4000
+#define XY_PROBE_SPEED 3000
 
 // Speed for the first approach when double-probing (with PROBE_DOUBLE_TOUCH)
 #define Z_PROBE_SPEED_FAST HOMING_FEEDRATE_Z
 
 // Speed for the "accurate" probe of each point
-#define Z_PROBE_SPEED_SLOW (Z_PROBE_SPEED_FAST / 10)
+#define Z_PROBE_SPEED_SLOW (Z_PROBE_SPEED_FAST / 2)
 
 // Use double touch for probing
-#define PROBE_DOUBLE_TOUCH
+//#define PROBE_DOUBLE_TOUCH
 
 /**
  * Allen key retractable z-probe as seen on many Kossel delta printers - http://reprap.org/wiki/Kossel#Automatic_bed_leveling_probe
