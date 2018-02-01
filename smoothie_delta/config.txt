@@ -1,4 +1,4 @@
-# Smoothieboard configuration file, see http://smoothieware.org/configuring-smoothie
+﻿# Smoothieboard configuration file, see http://smoothieware.org/configuring-smoothie
 # NOTE Lines must not exceed 132 characters, and '#' characters mean what follows is ignored
 ## Robot module configurations : general handling of movement G-codes and slicing into moves
 
@@ -218,7 +218,7 @@ beta_max                                     0                # This gets loaded
 gamma_min_endstop                            nc               # Pin to read min endstop, add a ! to invert if endstop is NO connected to ground
 gamma_max_endstop                            1.29^!           # Pin to read max endstop, uncomment this and comment the above if using max endstops
 gamma_homing_direction                       home_to_max      # Or set to home_to_max and set alpha_max and uncomment the alpha_max_endstop
-gamma_max                                    260.00           # This gets loaded as the current position after homing when home_to_max is set
+gamma_max                                    220.00           # This gets loaded as the current position after homing when home_to_max is set
 
 alpha_max_travel                             600              # Max travel in mm for alpha/X axis when homing
 beta_max_travel                              600              # Max travel in mm for beta/Y axis when homing
