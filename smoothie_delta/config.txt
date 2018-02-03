@@ -43,25 +43,25 @@ z_axis_max_speed                             12000            # Maximum speed in
 alpha_step_pin                               2.0              # Pin for alpha stepper step signal
 alpha_dir_pin                                0.5!             # Pin for alpha stepper direction, add '!' to reverse direction
 alpha_en_pin                                 0.4              # Pin for alpha enable pin
-alpha_current                                0.7 #1.5         # X stepper motor current
+alpha_current                                1.2 #1.5         # X stepper motor current
 alpha_max_rate                               30000.0          # Maximum rate in mm/min
 
 beta_step_pin                                2.1              # Pin for beta stepper step signal
 beta_dir_pin                                 0.11!            # Pin for beta stepper direction, add '!' to reverse direction
 beta_en_pin                                  0.10             # Pin for beta enable
-beta_current                                 0.7 #1.5         # Y stepper motor current
+beta_current                                 1.2 #1.5         # Y stepper motor current
 beta_max_rate                                30000.0          # Maxmimum rate in mm/min
 
 gamma_step_pin                               2.2              # Pin for gamma stepper step signal
 gamma_dir_pin                                0.20!            # Pin for gamma stepper direction, add '!' to reverse direction
 gamma_en_pin                                 0.19             # Pin for gamma enable
-gamma_current                                0.7 #1.5         # Z stepper motor current
+gamma_current                                1.2 #1.5         # Z stepper motor current
 gamma_max_rate                               30000.0          # Maximum rate in mm/min
 
 ## Extruder module configuration
 # See http://smoothieware.org/extruder
 extruder.hotend.enable                          true          # Whether to activate the extruder module at all. All configuration is ignored if false
-extruder.hotend.steps_per_mm                    96 #96            # Steps per mm for extruder stepper
+extruder.hotend.steps_per_mm                    192 #96            # Steps per mm for extruder stepper
 extruder.hotend.default_feed_rate               500 #600      # Default rate ( mm/minute ) for moves where only the extruder moves
 extruder.hotend.acceleration                    500           # Acceleration for the stepper motor mm/sec²
 extruder.hotend.max_speed                       100 #50       # Maximum speed in mm/s
@@ -218,19 +218,19 @@ beta_max                                     0                # This gets loaded
 gamma_min_endstop                            nc               # Pin to read min endstop, add a ! to invert if endstop is NO connected to ground
 gamma_max_endstop                            1.29^!           # Pin to read max endstop, uncomment this and comment the above if using max endstops
 gamma_homing_direction                       home_to_max      # Or set to home_to_max and set alpha_max and uncomment the alpha_max_endstop
-gamma_max                                    220.00           # This gets loaded as the current position after homing when home_to_max is set
+gamma_max                                    230.00           # This gets loaded as the current position after homing when home_to_max is set
 
 alpha_max_travel                             600              # Max travel in mm for alpha/X axis when homing
 beta_max_travel                              600              # Max travel in mm for beta/Y axis when homing
 gamma_max_travel                             600              # Max travel in mm for gamma/Z axis when homing
 
 # Endstops home at their fast feedrate first, then once the endstop is found they home again at their slow feedrate for accuracy
-alpha_fast_homing_rate_mm_s                  200              # Alpha tower fast homing feedrate in mm/second
-alpha_slow_homing_rate_mm_s                  20               # Alpha tower slow homing feedrate in mm/second
-beta_fast_homing_rate_mm_s                   200              # Beta  tower fast homing feedrate in mm/second
-beta_slow_homing_rate_mm_s                   20               # Beta  tower slow homing feedrate in mm/second
-gamma_fast_homing_rate_mm_s                  200              # Gamma tower fast homing feedrate in mm/second
-gamma_slow_homing_rate_mm_s                  20               # Gamma tower slow homing feedrate in mm/second
+alpha_fast_homing_rate_mm_s                  100              # Alpha tower fast homing feedrate in mm/second
+alpha_slow_homing_rate_mm_s                  5                # Alpha tower slow homing feedrate in mm/second
+beta_fast_homing_rate_mm_s                   100              # Beta  tower fast homing feedrate in mm/second
+beta_slow_homing_rate_mm_s                   5                # Beta  tower slow homing feedrate in mm/second
+gamma_fast_homing_rate_mm_s                  100              # Gamma tower fast homing feedrate in mm/second
+gamma_slow_homing_rate_mm_s                  5                # Gamma tower slow homing feedrate in mm/second
 
 alpha_homing_retract_mm                      5                # Distance to retract from the endstop after it is hit for alpha/X
 beta_homing_retract_mm                       5                # Distance to retract from the endstop after it is hit for beta/Y
@@ -255,7 +255,7 @@ gamma_trim                                    0                # Software trim f
 zprobe.enable                                true            # Set to true to enable a zprobe
 zprobe.probe_pin                             1.28!^          # Pin probe is attached to, if NC remove the !
 zprobe.slow_feedrate                         5               # Mm/sec probe feed rate
-#zprobe.debounce_count                       100             # Set if noisy
+zprobe.debounce_count                        100             # Set if noisy
 zprobe.fast_feedrate                         100             # Move feedrate mm/sec
 zprobe.probe_height                          5               # How much above bed to start probe
 #gamma_min_endstop                           nc              # Normally 1.28. Change to nc to prevent conflict,
@@ -265,18 +265,14 @@ zprobe.probe_height                          5               # How much above be
 # Example for the delta calibration strategy
 leveling-strategy.delta-calibration.enable   true            # Enable basic delta calibration
 leveling-strategy.delta-calibration.radius   80              # the probe radius
-leveling-strategy.delta-calibration.initial_height  30       # The initial height above the bed we stop the initial move down after home 
-                                                             # to find the bed. This should be a height that is enough that the probe
-                                                             # will not hit the bed and is an offset from gamma_max (can be 
-                                                             # set to 0 if gamma_max takes into account the probe offset)
 
 # Example for the delta grid leveling strategy
 leveling-strategy.delta-grid.enable          true             # Enable grid leveling
-leveling-strategy.delta-grid.radius          75               # Grid radius in millimeters
+leveling-strategy.delta-grid.radius          80               # Grid radius in millimeters
 leveling-strategy.delta-grid.size            7                # Grid size, must be an odd number
 leveling-strategy.delta-grid.do_home         true             # Whether to home before calibration
 leveling-strategy.delta-grid.save            true             # Whether to automatically save the grid
-leveling-strategy.delta-grid.initial_height  30               # Height at which to start probing
+leveling-strategy.delta-grid.initial_height  50               # Height at which to start probing
 
 ## Panel
 # See http://smoothieware.org/panel
