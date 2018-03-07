@@ -27,7 +27,7 @@ arm_radius                                   146.55           # This is the hori
 
 # Planner module configuration : Look-ahead and acceleration configuration
 # See http://smoothieware.org/motion-control
-acceleration                                 3000             # Acceleration in mm/second/second.
+acceleration                                 2000             # Acceleration in mm/second/second.
 #z_acceleration                              500              # Acceleration for Z only moves in mm/s^2, 0 uses acceleration which is the default. DO NOT SET ON A DELTA
 junction_deviation                           0.05             # See http://smoothieware.org/motion-control#junction-deviation
 #z_junction_deviation                        0.0              # For Z only moves, -1 uses junction_deviation, zero disables junction_deviation on z moves DO NOT SET ON A DELTA
@@ -313,7 +313,7 @@ custom_menu.power_off.command              M81               #
 
 ## Network settings
 # See http://smoothieware.org/network
-network.enable                               false            # Enable the ethernet network services
+network.enable                               true             # Enable the ethernet network services
 network.webserver.enable                     true             # Enable the webserver
 network.telnet.enable                        true             # Enable the telnet server
 network.ip_address                           auto             # Use dhcp to get ip address
