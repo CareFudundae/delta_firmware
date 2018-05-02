@@ -77,10 +77,10 @@ It will auto heat up if the current temp doesn't reach the target.
 ############  Leveling Function  ########################################
 
 #leveling mode(manual:0; auto:1; conceal leveling button:2)
->cfg_leveling_mode:0
+>cfg_leveling_mode:1
 
 #the command of auto leveling (G29 is available for Marlin.While G32 is for  Repetier and Smoothieware)
->cfg_auto_leveling_cmd:G28;G32;
+>cfg_auto_leveling_cmd:M280 S10.6;M280 S3.0;G31;M374;G0 X0 Y0 Z20;G30 Z2.1;M280 S7.0;M500;
 
 #the point number of manual leveling:(3,4,5 point available)
 >cfg_point_number:4
@@ -144,33 +144,34 @@ It will auto heat up if the current temp doesn't reach the target.
 
 
 #set number of  "More" button 
->moreitem_pic_cnt:6
+>moreitem_pic_cnt:1
 
 #edit command for 1~7 "More" button,each command must be separated by semicolon ";"
->moreitem_button1_cmd:G28;
+>moreitem_button1_cmd:G28;M280 S10.6;M280 S3.0;G32;M280 S7.0;M500;G28;
 
->moreitem_button2_cmd:G32;
+>moreitem_button2_cmd:G28;
 
->moreitem_button3_cmd:M500;
+>moreitem_button3_cmd:G28;
 
->moreitem_button4_cmd:M306 Z0;
+>moreitem_button4_cmd:G28;
 
->moreitem_button5_cmd:G31;
+>moreitem_button5_cmd:G28;
 
->moreitem_button6_cmd:G28 Z0;
+>moreitem_button6_cmd:G28;
 
 >moreitem_button7_cmd:G28;
 
 #how many "More" button display on screen interface
->morefunc_cnt:6
+>morefunc_cnt:0
 
 #command setting on button1~6
 >morefunc1_cmd:G28;
->morefunc2_cmd:G32;
->morefunc3_cmd:M500;
->morefunc4_cmd:M306 Z0;
->morefunc5_cmd:G31;
->morefunc6_cmd:G28;
+>morefunc2_cmd:M280 S10.6;
+>morefunc3_cmd:M280 S3.0;
+>morefunc4_cmd:G32;
+>morefunc5_cmd:M280 S7.0;
+>morefunc6_cmd:M500;
+>morefunc7_cmd:G28;
 
 #---------------------------------------------------------------------------------
 ##### Display Customization(button and logo customized see User's Manual) #######

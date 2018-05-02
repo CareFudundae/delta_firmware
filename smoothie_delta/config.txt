@@ -29,7 +29,7 @@ arm_radius                                   146.55           # This is the hori
 # See http://smoothieware.org/motion-control
 acceleration                                 2000             # Acceleration in mm/second/second.
 #z_acceleration                              500              # Acceleration for Z only moves in mm/s^2, 0 uses acceleration which is the default. DO NOT SET ON A DELTA
-junction_deviation                           0.05             # See http://smoothieware.org/motion-control#junction-deviation
+junction_deviation                           0.03             # See http://smoothieware.org/motion-control#junction-deviation
 #z_junction_deviation                        0.0              # For Z only moves, -1 uses junction_deviation, zero disables junction_deviation on z moves DO NOT SET ON A DELTA
 
 # Cartesian axis speed limits
@@ -83,7 +83,7 @@ extruder.hotend.en_pin                          0.21          # Pin for extruder
 #extruder.hotend.retract_zlift_length            0            # Z-lift on retract in mm, 0 disables
 #extruder.hotend.retract_zlift_feedrate          6000         # Z-lift feedrate in mm/min (Note mm/min NOT mm/sec)
 
-delta_current                                    0.7 #1.5     # First extruder stepper motor current
+delta_current                                    0.8 #1.5     # First extruder stepper motor current
 
 # Second extruder module configuration
 #extruder.hotend2.enable                         true         # Whether to activate the extruder module at all. All configuration is ignored if false
@@ -139,9 +139,9 @@ temperature_control.hotend.max_temp          270              # Set maximum temp
 
 # PID configuration 
 # See http://smoothieware.org/temperaturecontrol#pid
-#temperature_control.hotend.p_factor         13.7             # P ( proportional ) factor
-#temperature_control.hotend.i_factor         0.097            # I ( integral ) factor
-#temperature_control.hotend.d_factor         24               # D ( derivative ) factor
+temperature_control.hotend.p_factor         26.9#13.7             # P ( proportional ) factor
+temperature_control.hotend.i_factor         1.229#0.097            # I ( integral ) factor
+temperature_control.hotend.d_factor         147#24               # D ( derivative ) factor
 
 #temperature_control.hotend.max_pwm          64               # Max pwm, 64 is a good value if driving a 12v resistor with 24v.
 
@@ -253,26 +253,36 @@ gamma_trim                                    0                # Software trim f
 ## Z-probe
 # See http://smoothieware.org/zprobe
 zprobe.enable                                true            # Set to true to enable a zprobe
-zprobe.probe_pin                             1.28!^          # Pin probe is attached to, if NC remove the !
+zprobe.probe_pin                             1.28          # Pin probe is attached to, if NC remove the !
 zprobe.slow_feedrate                         5               # Mm/sec probe feed rate
 zprobe.debounce_count                        100             # Set if noisy
-zprobe.fast_feedrate                         100             # Move feedrate mm/sec
+zprobe.fast_feedrate                         120             # Move feedrate mm/sec
 zprobe.probe_height                          5               # How much above bed to start probe
 #gamma_min_endstop                           nc              # Normally 1.28. Change to nc to prevent conflict,
+
+##BLTouch Servo Settings
+# Switch module for Z probe servo control
+switch.servo.enable                            true           #
+switch.servo.input_on_command                  M280 S3.0      # M280 S7.5 would be midway
+switch.servo.input_off_command                 M280 S7.0      # same as M280 S0 0% duty cycle, effectively off
+switch.servo.output_pin                        1.23           # must be a PWM capable pin
+switch.servo.output_type                       hwpwm          # H/W pwm output settable with S parameter in the input_on_comand
+switch.servo.pwm_period_ms                    20             # set period to 20ms (50Hz) default is 50Hz
+
 
 # Levelling strategy
 
 # Example for the delta calibration strategy
 leveling-strategy.delta-calibration.enable   true            # Enable basic delta calibration
-leveling-strategy.delta-calibration.radius   80              # the probe radius
+leveling-strategy.delta-calibration.radius   40              # the probe radius
 
 # Example for the delta grid leveling strategy
 leveling-strategy.delta-grid.enable          true             # Enable grid leveling
-leveling-strategy.delta-grid.radius          80               # Grid radius in millimeters
-leveling-strategy.delta-grid.size            7                # Grid size, must be an odd number
+leveling-strategy.delta-grid.radius          40               # Grid radius in millimeters
+leveling-strategy.delta-grid.size            9                # Grid size, must be an odd number
 leveling-strategy.delta-grid.do_home         true             # Whether to home before calibration
 leveling-strategy.delta-grid.save            true             # Whether to automatically save the grid
-leveling-strategy.delta-grid.initial_height  50               # Height at which to start probing
+leveling-strategy.delta-grid.initial_height  30               # Height at which to start probing
 
 ## Panel
 # See http://smoothieware.org/panel
