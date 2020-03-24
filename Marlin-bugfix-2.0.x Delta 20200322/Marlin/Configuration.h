@@ -485,9 +485,9 @@
   // If you are using a pre-configured hotend then you can use one of the value sets by uncommenting it
 
   // FT Kossel
-  #define DEFAULT_Kp 21.42
-  #define DEFAULT_Ki 1.42
-  #define DEFAULT_Kd 80.73
+  #define DEFAULT_Kp 27.43
+  #define DEFAULT_Ki 1.71
+  #define DEFAULT_Kd 109.76
 
   // Ultimaker
   // #define DEFAULT_Kp 22.2
@@ -540,9 +540,9 @@
   //#define PID_BED_DEBUG // Sends debug data to the serial port.
 
   //from FT firmware
-  #define DEFAULT_bedKp 330.65
-  #define DEFAULT_bedKi 18.41
-  #define DEFAULT_bedKd 1484.39
+  #define DEFAULT_bedKp 132.01
+  #define DEFAULT_bedKi 25.56
+  #define DEFAULT_bedKd 454.59
 
   // //120V 250W silicone heater into 4mm borosilicate (MendelMax 1.5+)
   // //from FOPDT model - kp=.39 Tp=405 Tdead=66, Tc set to 79.2, aggressive factor of .15 (vs .1, 1, 10)
